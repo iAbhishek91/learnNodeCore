@@ -1,6 +1,21 @@
 # how events event-emitter and eventloop works in node
 
+## what are events and types in node
+
+- events are triggering points (also known as actions), which a system (in this case it is node) can understand.
+
+- there are 2 types of events:
+  - system events: this are triggering points that are raised or created by C++ side of node js. This is done with help of `libuv`.
+  - custom events: this are ytriggering points that are raised or created by javascript side of node js. This is done by `Event Emitter`.
+
 ## under the hood
+
+- what is libuv?
+  - libuv is independent 'C' library. It is embedded inside node.
+  - libuv is more closer (directly connects) to operating system.
+  - libuv emits events and manages system events which are closer to machine.
+  - libuv leaves inside node but outside V8.
+  - working of livuv is documented in [asyncAndSyncNotes](../asyncSyncNode/asyncAndSyncNotes.md)
 
 - what are listeners? listeners are functions which wait for an event to happen. And when the event occurs it will be invoked.
 
