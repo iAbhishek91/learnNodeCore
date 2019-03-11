@@ -1,0 +1,1 @@
+console.log(process.env); // all the node environment variable are listed in the object

@@ -1,5 +1,11 @@
 # how events event-emitter and eventloop works in node
 
+## what happens when node.js process starts
+
+- it starts executing the code given.
+- all the async, timer and nextTick are taken out of kernel and kept in synchronous event demultiplexer.
+- once all the code is executed (call stack/ js runtime stack) is empty, the control is passed to event loop.
+
 ## what are events and types in node
 
 - events are triggering points (also known as actions), which a system (in this case it is node) can understand.
