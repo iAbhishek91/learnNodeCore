@@ -12,7 +12,7 @@
 
 - there are 2 types of events:
   - system events: this are triggering points that are raised or created by C++ side of node js. This is done with help of `libuv`.
-  - custom events: this are ytriggering points that are raised or created by javascript side of node js. This is done by `Event Emitter`.
+  - custom events: this are triggering points that are raised or created by javascript side of node js. This is done by `Event Emitter`.
 
 ## under the hood
 
