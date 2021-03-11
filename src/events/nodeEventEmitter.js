@@ -76,5 +76,6 @@ eventObj4.emit('morning', 'doctorD');
 eventObj4.on('error',() => {
   console.log('an error occured');
 });
+
 eventObj4.emit('error');
 console.log('this line should be executed execute');

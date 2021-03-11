@@ -6,15 +6,17 @@
 
 - this is used for data movement or IO operations.
 
-- this is **limited memory area** (size).
+- this is **limited memory area** (finite size).
 
-- **Buffer** is avialble in the c++ side of node. This is globally available to node. Hence require/or import is not required.
+- buffer holds **binary** data with a perticular character encoding (utf8, ascii, base64 etc..).
 
-- javascript was not having in handling binary data (reading and manupulating), character encoding from unicode data.
+- **Buffer** is written in the c++ side of node and available on javascript side of nodejs. This is globally available to node. Hence require/or import is not required.
+
+- javascript was not having capabilities for handling binary data (reading and manupulating), character encoding from unicode data.
 
 - this is very much required when we handel server side data. server side programming language should have capability to handel different types of data coming from client.
 
-- **Buffer** in node was desinged in node to add this feature in javascript.
+- **Buffer** was desinged in node to add this feature in javascript.
 
 - *pre es6* era was this was true, now es6 have mechanism to handel binary data. This is not inbuilt in javascript (means in V8). Hence this module will probably become obsolate in coming days. However, node still uses its own buffer module internally.
   - this feature is called **ArrayBuffer()** and **TypedArray**. we will look into array buffer separately.
@@ -66,14 +68,16 @@
 
 ## features of node Buffer module
 
-- create buffer of different size, for a perticular size.
-- write in the buffer.
+- create buffer of different size, for a perticular size. `const buf = new Buffer('hello', 'utf8')`
+- convert to string. `buf.toString();//hello`
+- convert to json. `buf.toJson();//{ type: Buffer, data: [XX,XX,XX,XX,XX]}`
+- write in the buffer. `buf.write('pe');//pello`
 - copy one buffer/array string to another.
 - compare two buffer.
 - concat buffers.
 - find length of a string in perticular encoding.
 - verifies an object is buffer or not.
-- Array supporting metods on buffer objects
+- Array supporting metods on buffer objects `console.log(buf[2]); //binary of character 'l'`
 - interact with `octate streams in TCP streams`.
 - interact with `file system opration`.
 
